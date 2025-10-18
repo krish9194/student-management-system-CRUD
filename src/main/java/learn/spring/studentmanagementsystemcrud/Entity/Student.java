@@ -7,13 +7,22 @@ import jakarta.persistence.*;
 public class Student {
     // Student a Entity having
     @Id
-    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "first_name", nullable = false) //for custom name and not null
     private String fName;
     @Column(name = "last_name", nullable = false)
     private String lName;
     private String email; //will create column name as of the field i.e. email if not assigned
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public long getId() {
         return id;
@@ -46,7 +55,8 @@ public class Student {
     public void setEmail(String email) {
         this.email = email;
     }
-    public Student (){
+
+    public Student() {
 
     }
 
